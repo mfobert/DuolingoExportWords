@@ -1,4 +1,6 @@
-You can use the python script below with the downloaded vocabulary overview json file and gets the translation via google translations!
+
+source_lang = 'es'
+dest_lang = 'en'
 
 # This is a sample Python script.
 import json
@@ -22,8 +24,6 @@ def parse_json(filename):
     words.sort()
     words = list(dict.fromkeys(words)) #remove duplicates
 
-    source_lang = 'es'
-    dest_lang = 'en'
 
     translator = Translator()
     translations = translator.translate(words, src=source_lang, dest=dest_lang)
@@ -36,4 +36,4 @@ def parse_json(filename):
 
 
 if __name__ == '__main__':
-    parse_json('/home/mark/Downloads/overview.json')
+    parse_json('JSON_FILE_NAME.json')
