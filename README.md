@@ -1,0 +1,2 @@
+# DuolingoExportWords
+Duolingo Export Words
