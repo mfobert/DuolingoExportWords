@@ -27,7 +27,10 @@ def get_translations(words, source_lang, dest_lang):
 
 def get_words_from_API(username, password, lang):
     lingo = duolingo.Duolingo(username, password)
-    words = lingo.get_known_words('es')
+    vocab = lingo.get_vocabulary(language_abbr=lang)['vocab_overview']
+    words = []
+    for word_json_object in vocab:
+        words.append(word_json_object['word_string'])
     words.sort()
     words = list(dict.fromkeys(words))  # remove duplicates
     return words
